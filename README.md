@@ -1,2 +1,2 @@
-# mosaic-crochet
-Generate an mosaic crochet pattern given an image
+# Mosaic Crochet Generator
+Generate a mosaic crochet pattern given an image
