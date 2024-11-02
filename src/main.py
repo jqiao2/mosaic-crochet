@@ -7,7 +7,7 @@ from PIL import Image
 
 from src.utils import safe_get_grid
 
-IMAGE_PATH = "../images/kraken.png"
+IMAGE_PATH = "../images/example/kraken.png"
 WIDTH = 75
 
 
@@ -82,7 +82,7 @@ def gen_grid(img: np.ndarray):
             stitch_grid[h, w] = Stitch(False, color, safe_get_grid(stitch_grid, h + 1, w),
                                        safe_get_grid(stitch_grid, h + 2, w))
 
-    save_stitch_grid(stitch_grid, "only_single_stitches.png")
+    save_stitch_grid(stitch_grid, "../images/example/kraken_only_single_stitches.png")
 
     # start from bottom, go up
     THRESH = 128
@@ -105,7 +105,7 @@ def gen_grid(img: np.ndarray):
     return stitch_grid
 
 
-def save_stitch_grid(stitch_grid: np.ndarray, filename="stitch_grid.png"):
+def save_stitch_grid(stitch_grid: np.ndarray, filename="kraken_mosaic_grid.png"):
     assert (stitch_grid.dtype == Stitch)
 
     def get_stitch_color(stitch: Stitch):
