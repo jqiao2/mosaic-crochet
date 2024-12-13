@@ -4,8 +4,7 @@ from PIL import Image
 
 from src.algo import generate_closest_grid, get_bw_image, get_stitch_size_image
 from src.constants import IMAGE_PATH
-from src.objects import Stitch
-from src.utils import save_stitch_grid
+from src.utils import save_stitch_grid, save_image_grid
 
 
 def generate_stitch_grid(filepath: str):
@@ -23,6 +22,7 @@ def generate_stitch_grid(filepath: str):
 
 
 if __name__ == '__main__':
-    s = Stitch(True, True)
-    # generate_stitch_square(s)
     generate_stitch_grid(IMAGE_PATH)
+    # s = Stitch(True, True)
+    # generate_stitch_square(s)
+    # generate_stitch_grid(IMAGE_PATH)

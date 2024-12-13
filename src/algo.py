@@ -46,8 +46,6 @@ def gen_grid(img: np.ndarray, first_stitch: bool = True, threshold=128):
             stitch_grid[h, w] = Stitch(False, color, safe_get_grid(stitch_grid, h + 1, w),
                                        safe_get_grid(stitch_grid, h + 2, w))
 
-    save_stitch_grid(stitch_grid, "../images/example/kraken_only_single_stitches.png")
-
     # start from bottom, go up
     for h in reversed(range(height)):
         for w in range(width):
@@ -106,7 +104,15 @@ def generate_stitch_square(stitch: Stitch):
     square = np.zeros((20, 20))
     square[:] = get_stitch_color(stitch)
 
-    plt.imshow(square, cmap="gray")
+    if stitch.is_double:
+        # draw x if double stitch
+        x = [5, 15]
+        y = [5, 15]
+        print(x[::-1])
+        plt.plot(x, y, color='black', linewidth=3)
+        plt.plot(x[::-1], y, color='black', linewidth=3)
+
+    plt.imshow(square, cmap="gray", vmin=0, vmax=255)
     plt.show()
 
     return None
