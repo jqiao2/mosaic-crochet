@@ -1,2 +1,2 @@
-IMAGE_PATH = "../images/20645ef1fef97cb5c45e9521c4153507-4283932324.jpg"
+IMAGE_PATH = "../images/example/kraken.png"
 WIDTH = 75
