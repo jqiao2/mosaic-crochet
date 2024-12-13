@@ -6,7 +6,7 @@ from matplotlib import pyplot as plt
 
 from src.constants import WIDTH
 from src.objects import Stitch
-from src.utils import get_stitch_color, gen_stitch_grid_img, save_stitch_grid, safe_get_grid
+from src.utils import get_stitch_color, gen_stitch_grid_img, safe_get_grid
 
 
 def get_bw_image(image_path: str):

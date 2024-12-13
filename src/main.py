@@ -23,6 +23,3 @@ def generate_stitch_grid(filepath: str):
 
 if __name__ == '__main__':
     generate_stitch_grid(IMAGE_PATH)
-    # s = Stitch(True, True)
-    # generate_stitch_square(s)
-    # generate_stitch_grid(IMAGE_PATH)

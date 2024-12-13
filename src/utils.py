@@ -64,7 +64,6 @@ def save_image_grid(x_pattern, image_size=20, grid_color=(200, 200, 200), false_
     Create a grid of images with X pattern and hidden grid lines.
     """
     h, w = len(x_pattern), len(x_pattern[0])
-    print(h, w)
 
     # Create a new image for the entire grid
     grid_image = Image.new('RGB', (image_size * w, image_size * h), true_color)
@@ -112,7 +111,5 @@ def gen_stitch_grid_img(stitch_grid: np.ndarray):
 
 def save_stitch_grid(stitch_grid: np.ndarray, filename: str):
     assert (stitch_grid.dtype == Stitch)
-    # stitch_img = gen_stitch_grid_img(stitch_grid)
-    # Image.fromarray(stitch_img.astype(np.uint8)).save(filename)
     stitch_img = save_image_grid(x_pattern=stitch_grid)
     stitch_img.save(filename)
